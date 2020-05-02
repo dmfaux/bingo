@@ -1,0 +1,39 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="container">
+  <div class="logo">
+    <img src="assets/bingo.png" alt="BINGO!" />
+  </div>
+
+  <div *ngIf="game" class="sign-up">
+    <h1 class="room-name">Join {{ game.name }}</h1>
+
+    <form
+      class="form"
+      fxLayout="row"
+      [formGroup]="joinForm"
+      (ngSubmit)="join()"
+    >
+      <div fxFlex="80">
+        <mat-form-field appearance="standard">
+          <mat-label>Name</mat-label>
+          <input
+            #name
+            matInput
+            placeholder="Name"
+            autocomplete="off"
+            formControlName="name"
+            maxLength="50"
+            required
+          />
+          <mat-hint align="end" *ngIf="name.value.length > 20">
+            {{ name.value.length }} / 50
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div fxFlex="20" fxLayoutAlign="center center">
+        <button class="button" type="submit" [disabled]="!joinForm.valid">
+          GO!
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

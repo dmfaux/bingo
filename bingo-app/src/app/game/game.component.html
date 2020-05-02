@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="start center" class="container">
+  <div class="logo">
+    <img src="assets/bingo.png" alt="BINGO!" />
+  </div>
+  <div class="share-box" fxLayoutAlign="center center">
+    Share link: <input [(ngModel)]="shareUrl" />
+    <mat-icon
+      inline="true"
+      title="Copy link to clipboard"
+      [cdkCopyToClipboard]="shareUrl"
+      (click)="copied()"
+    >
+      file_copy
+    </mat-icon>
+  </div>
+  <div>
+    <span *ngIf="clicked">Copied!</span>
+  </div>
+</div>

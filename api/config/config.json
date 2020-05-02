@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "root",
+    "password": "password",
+    "database": "bingo",
+    "host": "127.0.0.1",
+    "dialect": "mariadb",
+    "operatorsAliases": "0",
+    "port": 33060,
+    "dialectOptions": {
+      "timezone": "Etc/GMT+2"
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": "0"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": "0"
+  }
+}

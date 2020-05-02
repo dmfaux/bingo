@@ -1,0 +1,44 @@
+.container {
+  min-height: 100vh;
+
+  .form {
+    width: 100%;
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    .button {
+      border-radius: 10px;
+      background-color: #51c21c;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      border: none;
+      outline: none;
+
+      &:hover {
+        margin-top: -2px;
+        box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    .button:disabled {
+      background-color: #a2c791;
+      color: whitesmoke;
+
+      &:hover {
+        margin-top: 0px;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .logo {
+    max-width: 300px;
+
+    img {
+      width: 300px;
+    }
+  }
+}

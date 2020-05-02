@@ -1,0 +1,34 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="container">
+  <div class="logo">
+    <img src="assets/bingo.png" />
+  </div>
+  <form
+    class="form"
+    fxLayout="row"
+    [formGroup]="bingoForm"
+    (ngSubmit)="start()"
+  >
+    <div fxFlex="80">
+      <mat-form-field appearance="standard">
+        <mat-label>Create New Bingo Hall</mat-label>
+        <input
+          #name
+          matInput
+          placeholder="Name your Hall!"
+          autocomplete="off"
+          formControlName="name"
+          maxLength="255"
+          required
+        />
+        <mat-hint align="end" *ngIf="name.value.length > 20">
+          {{ name.value.length }} / 255
+        </mat-hint>
+      </mat-form-field>
+    </div>
+    <div fxFlex="20" fxLayoutAlign="center center">
+      <button class="button" type="submit" [disabled]="!bingoForm.valid">
+        GO!
+      </button>
+    </div>
+  </form>
+</div>

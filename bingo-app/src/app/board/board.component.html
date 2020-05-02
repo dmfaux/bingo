@@ -1,0 +1,19 @@
+<div class="board" fxLayout="row" fxLayoutAlign="center start">
+  <div class="column" fxLayout="column" *ngFor="let col of board" fxFlex>
+    <div class="header" fxLayoutAlign="center center" fxFlex="30">
+      {{ col.letter }}
+    </div>
+    <div
+      class="digit noselect"
+      *ngFor="let number of col.numbers"
+      fxLayoutAlign="center center"
+      fxFlex
+      fxGrow
+      [ngClass]="{ checked: number.checked }"
+      (click)="clicked(number)"
+    >
+      <span *ngIf="number.digit !== 0">{{ number.digit }}</span>
+      <img *ngIf="number.digit === 0" src="assets/star.svg" alt="Free Space" />
+    </div>
+  </div>
+</div>
